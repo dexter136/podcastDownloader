@@ -141,14 +141,14 @@ func getPodcast(podcast podcastDef, maxDownload int) error {
 }
 
 func main() {
-	podcasts, err := readConfig("/test.yaml")
+	podcasts, err := readConfig("config/config.yaml")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
 	for _, podcast := range podcasts {
-		err := getPodcast(podcast, 2)
+		err := getPodcast(podcast, 10)
 
 		if err != nil {
 			fmt.Println(err)
